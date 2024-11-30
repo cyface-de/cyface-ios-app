@@ -1,0 +1,23 @@
+name: "Build iOS App"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_test:
+    runs-on: macos-15
+    defaults:
+      run:
+        working-directory: app
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v3
+
+        - name: Build Project
+          run: |
+            xcodebuild -project app.xcodeproj -scheme app Development -destination 'platform=iOS Simulator,name=iPhone SE (3rd generation),OS=latest' clean test       
