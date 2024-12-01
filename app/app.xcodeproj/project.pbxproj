@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AAA06E9E2CFBD6420038AB46 /* DataCapturing in Frameworks */ = {isa = PBXBuildFile; productRef = AAA06E9D2CFBD6420038AB46 /* DataCapturing */; };
+		AAA06F1A2CFC58420038AB46 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AAA06F192CFC58370038AB46 /* .swiftlint.yml */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		AA0D17EB2CFBC701007E8863 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,7 @@
 		AA0D17DA2CFBC6FD007E8863 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0D17EA2CFBC701007E8863 /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0D17F42CFBC701007E8863 /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA06F192CFC58370038AB46 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -65,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA06E9E2CFBD6420038AB46 /* DataCapturing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +95,7 @@
 		AA0D17D12CFBC6FD007E8863 = {
 			isa = PBXGroup;
 			children = (
+				AAA06F192CFC58370038AB46 /* .swiftlint.yml */,
 				AA0D17DC2CFBC6FD007E8863 /* app */,
 				AA0D17ED2CFBC701007E8863 /* appTests */,
 				AA0D17F72CFBC701007E8863 /* appUITests */,
@@ -115,6 +123,7 @@
 				AA0D17D62CFBC6FD007E8863 /* Sources */,
 				AA0D17D72CFBC6FD007E8863 /* Frameworks */,
 				AA0D17D82CFBC6FD007E8863 /* Resources */,
+				AAA06F672CFC5C670038AB46 /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -125,6 +134,7 @@
 			);
 			name = app;
 			packageProductDependencies = (
+				AAA06E9D2CFBD6420038AB46 /* DataCapturing */,
 			);
 			productName = app;
 			productReference = AA0D17DA2CFBC6FD007E8863 /* app.app */;
@@ -208,6 +218,9 @@
 			);
 			mainGroup = AA0D17D12CFBC6FD007E8863;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AAA06E9C2CFBD6420038AB46 /* XCRemoteSwiftPackageReference "ios-sensor-library" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA0D17DB2CFBC6FD007E8863 /* Products */;
 			projectDirPath = "";
@@ -225,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA06F1A2CFC58420038AB46 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +257,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AAA06F672CFC5C670038AB46 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA0D17D62CFBC6FD007E8863 /* Sources */ = {
@@ -413,6 +449,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please enable Background Location Capturing to avoid gaps in your Measurements";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This App requires Permission to Capture Device Location to measure Bike Lane Quality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -448,6 +486,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please enable Background Location Capturing to avoid gaps in your Measurements";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This App requires Permission to Capture Device Location to measure Bike Lane Quality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -618,6 +658,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please enable Background Location Capturing to avoid gaps in your Measurements";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This App requires Permission to Capture Device Location to measure Bike Lane Quality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -752,6 +794,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please enable Background Location Capturing to avoid gaps in your Measurements";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This App requires Permission to Capture Device Location to measure Bike Lane Quality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -879,6 +923,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please enable Background Location Capturing to avoid gaps in your Measurements";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This App requires Permission to Capture Device Location to measure Bike Lane Quality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1006,6 +1052,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please enable Background Location Capturing to avoid gaps in your Measurements";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This App requires Permission to Capture Device Location to measure Bike Lane Quality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1121,6 +1169,25 @@
 			defaultConfigurationName = "Release Development";
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AAA06E9C2CFBD6420038AB46 /* XCRemoteSwiftPackageReference "ios-sensor-library" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cyface-de/ios-sensor-library";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AAA06E9D2CFBD6420038AB46 /* DataCapturing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAA06E9C2CFBD6420038AB46 /* XCRemoteSwiftPackageReference "ios-sensor-library" */;
+			productName = DataCapturing;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA0D17D22CFBC6FD007E8863 /* Project object */;
 }
